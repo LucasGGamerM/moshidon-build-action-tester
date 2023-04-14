@@ -1,4 +1,2 @@
-# moshidon-nightly
-Nightly releases page for Moshidon. For full source, check https://github.com/LucasGGamerM/moshidon
-
-That is it. This is just a repo created to host the nightly releases of Moshidon without spammming the main repo.
+# moshidon-build-action-tester
+Testing the grounds for github actions, as I don't want to spam my other repos with experimental broken stuff.
