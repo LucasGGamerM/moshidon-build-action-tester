@@ -32,8 +32,9 @@ jobs:
         fileDir: './mastodon/keystore/'
         encodedString: ${{ secrets.KEYSTORE }}
 
-    - name: Build with Gradle
-      run: ./gradlew assembleNightly
+    - uses: gradle/gradle-build-action@v2
+      with:
+         arguments: assembleNightly
       env:
           SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
           SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
@@ -46,12 +47,12 @@ jobs:
        name: moshidon-nightly.apk
        path: ./mastodon/build/outputs/apk/nightly/moshidon-nightly.apk
 
-    - name: Create release
-      uses: "marvinpinto/action-automatic-releases@latest"
-      with:
-        repo_token: "${{ secrets.GH_TOKEN }}"
-        automatic_release_tag: nightly-${{ steps.date.outputs.date }}
-        title: Nightly ${{ steps.date.outputs.date }}
-        prerelease: false
-        files: |
-          ./mastodon/build/outputs/apk/nightly/moshidon-nightly.apk
+#     - name: Create release
+#       uses: "marvinpinto/action-automatic-releases@latest"
+#       with:
+#         repo_token: "${{ secrets.GH_TOKEN }}"
+#         automatic_release_tag: nightly-${{ steps.date.outputs.date }}
+#         title: Nightly ${{ steps.date.outputs.date }}
+#         prerelease: false
+#         files: |
+#           ./mastodon/build/outputs/apk/nightly/moshidon-nightly.apk
