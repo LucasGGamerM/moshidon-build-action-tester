@@ -34,7 +34,7 @@ jobs:
 
     - uses: gradle/gradle-build-action@v2
       with:
-         arguments: assembleNightly
+         arguments: assembleRelease
       env:
           SIGNING_KEY_ALIAS: ${{ secrets.SIGNING_KEY_ALIAS }}
           SIGNING_KEY_PASSWORD: ${{ secrets.SIGNING_KEY_PASSWORD }}
