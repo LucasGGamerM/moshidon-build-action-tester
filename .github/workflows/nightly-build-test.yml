@@ -45,7 +45,7 @@ jobs:
       uses: actions/upload-artifact@v3.1.2
       with:
        name: moshidon-nightly.apk
-       path: ./mastodon/build/outputs/apk/release/moshidon-release-unsigned.apk
+       path: ./mastodon/build/outputs/apk/debug/moshidon-debug.apk
 
 #     - name: Create release
 #       uses: "marvinpinto/action-automatic-releases@latest"
